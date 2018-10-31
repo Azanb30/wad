@@ -8,8 +8,9 @@
 <!-- =============== Exercise 1 =================== -->
 <!-- After writing your name in input field press Enter -->
 
-<!--<input type="text" name="name">-->
-
+<!--<input type="text" name="name">
+A box appear just for write any text After pressing enter nothing
+will change of we can carry our writing process again.-->
 
 
 <!-- =============== Exercise 2 =================== -->
@@ -18,8 +19,9 @@
 
 <!--<form>
     <input type="text" name="name">
-</form>-->
-
+</form>
+In form after writing any text the query parameters changes each time
+when enter is pressed.-->
 
 
 <!-- =============== Exercise 3 =================== -->
@@ -29,20 +31,23 @@
 <!--<form>
     <input type="text" name="name">
     <input type="submit">
-</form>-->
-
+</form>
+Yes Pressing Enter key and Clicking submit button have same impact
+on url query parameters.-->
 
 
 <!-- =============== Exercise 4 =================== -->
 <!-- After writing your name and registration number in input fields,
         press Submit button, is the URL is same now ? -->
-
-<!--<form action="/my-handling-form-page">
+<!--
+<form action="/my-handling-form-page">
     <input type="text" name="name">
     <input type="text" name="reg">
     <input type="submit">
-</form>-->
-
+</form>
+Now this time Url is slightly different in such a way that we have now
+two query parameters one is for name and other one for registration no but
+the similarity is both have impact on query parameters.-->
 
 <!-- =============== Exercise 5 =================== -->
 <!-- After writing some text in input field,
@@ -51,7 +56,8 @@
 <!--<form action="http://www.google.com/search">
     <input type="text" name="q">
     <input type="submit">
-</form>-->
+</form>
+After pressing submit button the text move to its relavent search on Google.-->
 
 
 
@@ -62,11 +68,13 @@
 <!--<form action="http://www.google.com/search">
     <input type="text" name="q">
     <input type="submit">
-</form>-->
-
-
-
-
+</form>
+q=top+web+language w.r.t Google
+https://www.google.com/search?q=top+web+language-->
+<!--
+here in query parameter '+' sign indicate the space separation
+in the text we write in Box appeared.
+-->
 
 
 <!-- =============== Exercise 7 =================== -->
@@ -76,9 +84,9 @@
 <!--<form action="http://www.google.com/search">
     <input type="text" name="q">
     <input type="submit">
-</form>-->
-
-
+</form>
+q=Imran+khan w.r.t Google
+https://www.google.com/search?q=Imran+khan-->
 
 <!-- =============== Exercise 8 =================== -->
 <!-- After writing your cell phone brand in input field,
@@ -87,21 +95,23 @@
         Where did the "q" parameter go ?
         (Please check in "google chrome developers tool"
         under "Network" tab )-->
-
-<!--<form action="/form-handler" method="post">
+<!--
+<form action="/form-handler" method="post">
     <input type="text" name="q">
     <input type="submit">
-</form>-->
-
+</form>
+Error 404 File not found and query parameter is disable.-->
 
 <!-- =============== Exercise 9 =================== -->
 <!-- After writing some text in input field,
         press Submit button,  what is the value of q parameter in URL ? -->
-
-<!--<form action="/my-handling-form-page" method="get">
+<!--
+<form action="/my-handling-form-page" method="get">
     <input type="password" name="q">
     <input type="submit">
-</form>-->
+</form>
+query parameter changed with the text written in the box and then
+browser show error 404.-->
 
 
 <!-- =============== Exercise 10 =================== -->
@@ -110,10 +120,12 @@
         in both cases ? -->
 
 <!--<form action="/my-handling-form-page" method="get">
+
     <input type="checkbox" name="g">
     <input type="submit">
-</form>-->
-
+</form>
+query parameter changed with g=on
+and then browser show 404 Error.-->
 
 
 <!-- =============== Exercise 11 =================== -->
@@ -127,8 +139,8 @@
     <input type="checkbox" name="q">
     <br>
     <input type="submit">
-</form>-->
-
+</form>
+query parameter have now two query members g=on&h=on-->
 
 
 
@@ -143,8 +155,8 @@
     <input type="radio" name="q">
     <br>
     <input type="submit">
-</form>-->
-
+</form>
+g=on&h=on&q=on-->
 
 
 
@@ -159,8 +171,8 @@
     <input type="radio" name="q" value="three">
     <br>
     <input type="submit">
-</form>-->
-
+</form>
+q=two-->
 
 <!-- =============== Exercise 14 =================== -->
 <!-- After selecting 3nd radio button,
@@ -179,8 +191,8 @@
     </label>
     <br><br>
     <input type="submit">
-</form>-->
-
+</form>
+q=three-->
 
 
 
@@ -198,20 +210,23 @@
     </select>
     <br><br>
     <input type="submit">
-</form>-->
-
+</form>
+q=two-->
 
 
 
 
 
 <!-- =============== Exercise 16 =================== -->
-<!-- After selecting "the number one" from the drop-down,
+ After selecting "the number one" from the drop-down,
         press Submit button,  what is the value of "q" parameter in URL ?
+
+<!--q=1-->
 
      After selecting "the last three" from the drop-down,
         press Submit button,  what is the value of "q" parameter in URL ?
--->
+
+<!--q=the+last+three-->
 
 <!--<form action="/my-handling-form-page" method="get">
     <select name="q">
