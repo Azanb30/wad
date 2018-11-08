@@ -1,6 +1,10 @@
 #main {
-    /* add CSS here */
+    max-width: 259px;
+    margin: auto;
 }
 .pet {
-    /* add CSS here */
+    border: solid #0f0293;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 9px 9px 9px 9px black;
 }
