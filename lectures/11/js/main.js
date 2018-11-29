@@ -9,32 +9,35 @@ function add() {
     todos.push(task);
     document.getElementById('todos').innerText = todos;
 }*/
-
+//this fucntion get input from user and show it on website it take id of task as input or then push it in on screen
 
 //============================================
 //-----------  STEP - 2 ----------------------
 //============================================
 
 
-/*var todos = [];
+/*
+var todos = [];
 function add() {
     var task = document.getElementById('task').value;
     todos.push(task);
-    document.getElementById('task').value = '';
+    document.getElementById('task').value = ' ';
     show();
 }
 
 function show() {
     var ul = document.createElement('ul');
     ul.classList.add("list-group");
-    for(var i=0; i<todos.length; i++){
+    for(var i=0; i<todos.length; i++)
+    {
         var li = document.createElement('li');
-        li.innerHTML  = '<li>' + todos[i] + '</li>';
-        li.classList.add("list-group-item");
+        li.innerHTML  = '<li>' + todos[0] + '</li>';
+        li.classList.add("list-group-item");// smj ni ai
         ul.appendChild(li);
     }
-    document.getElementById('todos').appendChild(ul);
-}*/
+    document.getElementById('todos').appendChild(ul);// smj ni ai
+}
+*/
 
 
 //============================================
@@ -42,8 +45,7 @@ function show() {
 //============================================
 
 
-/*
-function getTodos() {
+/*function getTodos() {
     var todos = [];
     var todos_str = localStorage.getItem('todo');
     if(todos_str !== null)
@@ -83,8 +85,7 @@ function show() {
     }
     document.getElementById('todos').appendChild(ul);
 }
-show();
-*/
+show();*/
 
 
 
