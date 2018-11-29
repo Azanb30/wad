@@ -28,10 +28,31 @@ displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
 function displayNext() {
     /*Write your code here */
+    currentQuestion++;
+    if (currentQuestion == questions.length)
+    {
+        displayScore();
+        currentQuestion=0;
+    }
+    displayCurrentQuestion();
 }
 
 function displayCurrentQuestion() {
     /*Write your code here */
+    hideScore();
+    var i;
+    var ques = document.getElementById("question");
+    var choi = document.getElementById("choice-list");
+    ques.innerText = questions[currentQuestion].question;
+    choi.innerHTML="";
+      for (i = 0 ; i < questions[currentQuestion].choices.length; i++)
+       {
+           choi.innerHTML += '<li><input type="radio">' + questions[currentQuestion].choices[i] + '</li>';
+           if (document.querySelector("input[name='dq']:checked"))
+           {
+               correctAnswers++;
+           }
+       }
 }
 
 function resetQuiz() {
