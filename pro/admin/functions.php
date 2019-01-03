@@ -1,6 +1,6 @@
 <?php
 require "server/db_connection.php";
-if(!isset($_POST['insert_products']))
+if(isset($_POST['insert_products']))
 {
     $pro_title = $_POST['pro_title'];
     $pro_cat = $_POST['pro_cat'];
@@ -10,14 +10,12 @@ if(!isset($_POST['insert_products']))
     $pro_keywords = $_POST['pro_kw'];
     $insertQuery = "insert into products(pro_title,pro_cat,pro_brand,pro_price,pro_desc,pro_keyword)
     values('$pro_title','$pro_cat','$pro_brand','$pro_price','$pro_desc','$pro_keywords');";
-    //echo $insertQuery;
     $res = mysqli_query($con,$insertQuery);
     if(!$res)
     {
         echo "Not Executed";
     }
 }
-//include "db_connection.php";
 function getcats()
 {
     global $con;

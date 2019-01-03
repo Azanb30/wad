@@ -29,3 +29,25 @@ function getBrands()
         echo "<li><a class='nav-link' href='#'>$name</a></li>";
     }
 }
+function getData()
+{
+    global $con;
+    $getBrandQuery = "select * from products";
+    $getBrandRes = mysqli_query($con,$getBrandQuery);
+    while ($row = mysqli_fetch_assoc($getBrandRes))
+    {
+        $title = $row['pro_title'];
+        $pro_cat = $row['pro_cat'];
+        $pro_brand = $row['pro_brand'];
+        $pro_price = $row['pro_price'];
+        $pro_desc = $row['pro_desc'];
+        $pro_keywords = $row['pro_keyword'];
+        echo "<li>Title : <b>$title</b></li>";
+        echo "<li>Category : <b>$pro_cat</b></li>";
+        echo "<li>Brand : <b>$pro_brand </b></li>";
+        echo "<li>Price : <b>$pro_price</b></li>";
+        echo "<li>Description : <b>$pro_desc</b></li>";
+        echo "<li>Keyword : <b>$pro_keywords</b></li>";
+        echo "<br>";
+    }
+}
