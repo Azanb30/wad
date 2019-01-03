@@ -1,7 +1,7 @@
 <?php
 require "db_connection.php";
 //include "db_connection.php";
-function getcats()
+function getCats()
 {
     global $con;
     $getCatQuery = "select * from categories";
@@ -15,7 +15,7 @@ function getcats()
         echo "<li><a class='nav-link' href='#'>$title</a></li>";
     }
 }
-function getbrands()
+function getBrands()
 {
     global $con;
     $getBrandQuery = "select * from brands";
