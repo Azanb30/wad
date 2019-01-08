@@ -3,7 +3,7 @@ require "server/db_connection.php";
 if(isset($_POST['insert_bran']))
 {
     $brand_title = $_POST['Brand_title'];
-    $insertQuery = "insert into brands(brand_title)  values('$brand_title');";
+    $insertQuery = "insert into brands(brand_title)   values('$brand_title');";
     $res = mysqli_query($con,$insertQuery);
     if(!$res)
     {

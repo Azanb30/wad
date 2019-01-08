@@ -3,7 +3,7 @@ require "server/db_connection.php";
 if(isset($_POST['insert_cat']))
 {
     $cat_title = $_POST['Category_title'];
-    $insertQuery = "insert into categories(cat_title) values('$cat_title');";
+    $insertQuery = "insert into categories(cat_title)  values('$cat_title');";
     $res = mysqli_query($con,$insertQuery);
     if(!$res)
     {
