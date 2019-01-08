@@ -1,6 +1,6 @@
 <?php
 require "server/db_connection.php";
-if(isset($_POST['insert_products']))
+if(isset($_POST['insert_pro']))
 {
     $pro_title = $_POST['pro_title'];
     $pro_cat = $_POST['pro_cat'];
@@ -8,8 +8,13 @@ if(isset($_POST['insert_products']))
     $pro_price = $_POST['pro_price'];
     $pro_desc = $_POST['pro_desc'];
     $pro_keywords = $_POST['pro_kw'];
-    $insertQuery = "insert into products(pro_title,pro_cat,pro_brand,pro_price,pro_desc,pro_keyword)
-    values('$pro_title','$pro_cat','$pro_brand','$pro_price','$pro_desc','$pro_keywords');";
+
+    $pro_image = $_FILES['pro_image']['name'];
+    $pro_image_tmp = $_FILES['pro_image']['tmp_name'];
+    move_uploaded_file($pro_image_tmp,"product_images/$pro_image");
+
+    $insertQuery = "insert into products(pro_title,pro_cat,pro_brand,pro_price,pro_desc,pro_image,pro_keywords)
+    values('$pro_title','$pro_cat','$pro_brand','$pro_price','$pro_desc','$pro_image','$pro_keywords');";
     $res = mysqli_query($con,$insertQuery);
     if(!$res)
     {
@@ -21,8 +26,6 @@ function getcats()
     global $con;
     $getCatQuery = "select * from categories";
     $getCatRes = mysqli_query($con,$getCatQuery);
-    //$row = mysqli_fetch_assoc($getCatRes);
-    //print_r($row);
     while ($row = mysqli_fetch_assoc($getCatRes))
     {
         $id = $row['cat_id'];
@@ -38,7 +41,7 @@ function getbrands()
     while ($row = mysqli_fetch_assoc($getBrandRes))
     {
         $id = $row['brand_id'];
-        $name = $row['brand_name'];
+        $name = $row['brand_title'];
         echo "<option value='$id'>$name</option>";
     }
 }

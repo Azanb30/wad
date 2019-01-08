@@ -25,29 +25,31 @@ function getBrands()
     while ($row = mysqli_fetch_assoc($getBrandRes))
     {
         $id = $row['brand_id'];
-        $name = $row['brand_name'];
+        $name = $row['brand_title'];
         echo "<li><a class='nav-link' href='#'>$name</a></li>";
     }
 }
-function getData()
-{
+function getPro(){
     global $con;
-    $getBrandQuery = "select * from products";
-    $getBrandRes = mysqli_query($con,$getBrandQuery);
-    while ($row = mysqli_fetch_assoc($getBrandRes))
-    {
-        $title = $row['pro_title'];
-        $pro_cat = $row['pro_cat'];
-        $pro_brand = $row['pro_brand'];
+    $getProQuery = "select * from products order by RAND();";
+    $getProResult = mysqli_query($con,$getProQuery);
+    while($row = mysqli_fetch_assoc($getProResult)){
+        $pro_id = $row['pro_id'];
+        $pro_title = $row['pro_title'];
         $pro_price = $row['pro_price'];
-        $pro_desc = $row['pro_desc'];
-        $pro_keywords = $row['pro_keyword'];
-        echo "<li>Title : <b>$title</b></li>";
-        echo "<li>Category : <b>$pro_cat</b></li>";
-        echo "<li>Brand : <b>$pro_brand </b></li>";
-        echo "<li>Price : <b>$pro_price</b></li>";
-        echo "<li>Description : <b>$pro_desc</b></li>";
-        echo "<li>Keyword : <b>$pro_keywords</b></li>";
-        echo "<br>";
+        $pro_image = $row['pro_image'];
+        echo "
+                <div class='col-sm-6 col-md-4 col-lg-3 text-center product-summary'>
+                    <h5 class='text-capitalize'>$pro_title</h5>
+                    <img src='admin/product_images/$pro_image'>
+                    <p> <b> Rs $pro_price/-  </b> </p>
+                    <a href='detail.php' class='btn btn-info btn-sm'>Details</a>
+                    <a href='#'>
+                        <button class='btn btn-primary btn-sm'>
+                            <i class='fas fa-cart-plus'></i> Add to Cart
+                        </button>
+                    </a>
+                </div>
+        ";
     }
 }
