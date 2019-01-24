@@ -108,7 +108,7 @@ require "server/functions.php";
                         <input type="text" class="form-control" id="c_name" name="c_name" placeholder="Enter your name"
                         required pattern="19[5-9][0-9]|200[0-1]">
                         <!--for year-->
-                        
+
                         <!-- for days 0?[1-9]|[1-2][0-9]|3[0-1]-->
 
                     </div>
